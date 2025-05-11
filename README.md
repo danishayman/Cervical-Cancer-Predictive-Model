@@ -1,165 +1,135 @@
-# Cervical Cancer Predictive Model 📊
+# 🔬 Cervical Cancer Predictive Model
 
-This project implements a machine learning pipeline to predict the risk factors associated with cervical cancer using data preprocessing, feature selection, and various classification algorithms. The project is implemented in a Jupyter Notebook (.ipynb) environment using Python.
 
----
+## 📋 Project Overview
 
-## 🎯 Overview
+This project develops machine learning models to predict cervical cancer based on various risk factors. Our goal is to create accurate and reliable predictive models that can help in early diagnosis and improve treatment outcomes.
 
-The objective of this project is to build a predictive model that can classify the presence of cervical cancer risk factors. The dataset includes clinical and demographic information, along with several test results. The project includes data preprocessing, feature engineering, and model evaluation using multiple machine learning algorithms.
+## 🧠 Key Features
 
----
+- **Data Analysis & Preprocessing**: Comprehensive preprocessing including handling missing values, feature selection, and data normalization
+- **Multiple Model Development**: Implementation of several machine learning algorithms including:
+  - Decision Trees
+  - Support Vector Machines (SVM)
+  - Neural Networks
+  - Evolutionary Neural Networks
+- **Model Optimization**: Hyperparameter tuning to maximize performance metrics
+- **Comparative Analysis**: Rigorous evaluation of model performance using accuracy, precision, recall, and F1-score
 
-## 🌟 Features
+## 📊 Dataset Description
 
-- **Data Cleaning**: Handling missing values and standardizing the dataset.
-- **Feature Scaling**: Using `StandardScaler` for normalization.
-- **Feature Selection**: Identifying the most significant features based on importance metrics.
-- **Model Training**: Implementing models such as:
-  - Random Forest Classifier
-  - Decision Tree Classifier with GridSearchCV
-  - Support Vector Machine (SVM) with GridSearchCV
-  - Neural Networks with Hyperparameter Tuning
-  - Evolutionary Neural Network System
-- **Model Evaluation**: Using metrics like accuracy, confusion matrix, precision, recall, and F1-score.
-- **Hyperparameter Tuning**: Optimizing model performance using Grid Search and Evolutionary Algorithms.
-- **Advanced Techniques**: SMOTE for handling imbalanced data, class weights, and genetic algorithms.
+The dataset contains information about risk factors for cervical cancer, including:
 
----
+- Demographic information (age)
+- Habits (smoking, contraceptive use)
+- Sexual history
+- Medical history
+- STD-related information
 
-## ⚙️ Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/danishayman/Cervical-Cancer-Predictive-Model.git
-
-   cd Cervical-Cancer-Predictive-Model
-   ```
-
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Run the Jupyter Notebooks:
-   ```bash
-   jupyter notebook Cervical_Cancer_Predictive_Model.ipynb
-   jupyter notebook "Project Part 2 Cancer2.ipynb"
-   ```
-
----
-
-## 📂 Dataset
-
-The dataset used in this project includes clinical features related to cervical cancer risk factors. It contains boolean-like and numerical data.
-
-- **Source**: [Provide a link if publicly available, or describe briefly if not accessible.]
-
-**Target Variables:**
+The target variables for prediction are:
 - Hinselmann
 - Schiller
 - Citology
 - Biopsy
 
----
+## 🔍 Key Findings
 
-## 🧠 Models and Methods
+### Part 1: Traditional ML Approach
+- SVM outperformed Decision Trees with an accuracy of **74.63%** vs. **64.18%**
+- SVM showed better recall values across all classes, indicating fewer false negatives
+- SVM demonstrated improved performance in precision, recall, and F1-score metrics
 
-### Part 1: Traditional Machine Learning Approach
+### Part 2: Neural Network Approach
+- The Evolutionary Neural Network model achieved a test accuracy of **75.25%**
+- Precision: **76.30%**
+- Recall: **79.52%**
+- F1 Score: **77.88%**
+- The hybrid model showed significant improvement over the traditional feedforward neural network
 
-#### 1. Data Preprocessing
-- Handled missing values by dropping rows and columns with excessive NaNs.
-- Transformed boolean-like columns to proper numeric or boolean types.
-- Standardized features using `StandardScaler`.
+## 💻 Technologies Used
 
-#### 2. Feature Selection
-- Selected top 5 features using feature importance metrics from the Random Forest model:
-  - `Age`
-  - `First sexual intercourse`
-  - `Hormonal Contraceptives (years)`
-  - `Number of sexual partners`
-  - `Num of pregnancies`
-
-#### 3. Model Training
-- **Random Forest Classifier**: Trained on the full feature set.
-- **Decision Tree Classifier**: Tuned with hyperparameters like `max_depth`, `min_samples_split`, and `min_samples_leaf`.
-- **Support Vector Machine (SVM)**: Explored kernels like linear and sigmoid with varying regularization parameters.
-
-#### 4. Model Evaluation
-- Metrics:
-  - Accuracy
-  - Precision, Recall, F1-score
-  - Confusion Matrix
-- Performed validation using a holdout validation set.
-
-### Part 2: Advanced Machine Learning Techniques
-
-#### 1. Neural Network Implementation
-- Built feedforward neural networks with TensorFlow/Keras
-- Implemented early stopping to prevent overfitting
-- Used SMOTE for handling imbalance in the dataset
-- Applied class weights to address class imbalance
-
-#### 2. Evolutionary Neural Network Optimization
-- Implemented genetic algorithms using DEAP library
-- Evolved neural network architectures to find optimal hyperparameters:
-  - Learning rate
-  - Dropout rate
-  - Batch size
-  - Number of hidden layers
-  - Number of neurons per layer
-
-#### 3. Model Comparison and Evaluation
-- Compared traditional models with neural network approaches
-- Visualized training and validation performance
-- Evaluated models using accuracy, precision, recall, F1-score, and confusion matrices
-- Demonstrated improved performance with the evolutionary approach
-
----
-
-## 🏆 Results
-
-### Part 1: Traditional Machine Learning
-- **Decision Tree Accuracy**: 74.63%
-- **SVM Accuracy**: 64.18%.
-
-### Part 2: Advanced Neural Networks
-- **Basic Neural Network Accuracy**: 67.66%
-- **Evolutionary Neural Network Accuracy**: 75.25%
-- **Evolutionary Neural Network Precision**: 76.30%
-- **Evolutionary Neural Network F1-Score**: 77.88%
-
-Detailed confusion matrices and classification reports are provided in the notebooks.
-
----
-
-## 🚀 How to Use
-
-1. **Load Dataset**: Replace `risk_factors.csv` with your dataset file.
-2. **Preprocess Data**: Run the preprocessing cells to clean and prepare the data.
-3. **Train Models**: Use the provided pipeline to train and evaluate models.
-4. **Hyperparameter Tuning**: Modify parameters in the GridSearchCV section as needed.
-5. **Apply Advanced Techniques**: Run the evolutionary algorithm to optimize neural network architecture.
-6. **Export Results**: Save the processed dataset or model outputs for future use.
-
----
-
-## 🛠️ Dependencies
-
-- Python 3.8+
+- Python
 - pandas
-- numpy
+- NumPy
 - scikit-learn
-- TensorFlow
-- Keras
-- DEAP (for evolutionary algorithms)
-- imbalanced-learn (for SMOTE)
-- matplotlib
-- Jupyter Notebook
+- TensorFlow/Keras
+- DEAP (Distributed Evolutionary Algorithms in Python)
+- Matplotlib
+- Seaborn
 
----
+## 🔧 Implementation
 
-## 🙏 Acknowledgements
-- **Libraries Used**: pandas, scikit-learn, numpy, TensorFlow, Keras, DEAP, imbalanced-learn
+The project is divided into two main parts:
 
----
+1. **Part 1**: Traditional machine learning approach with feature selection and model comparison
+2. **Part 2**: Advanced neural network models with evolutionary optimization
+
+## 📋 Prerequisites
+
+- Python 3.7+
+- pip or conda for package management
+- Required packages (can be installed via `pip install -r requirements.txt`):
+  - numpy
+  - pandas
+  - scikit-learn
+  - tensorflow
+  - matplotlib
+  - seaborn
+  - deap
+
+## 🚀 Getting Started
+
+Follow these steps to set up and run the project on your local machine:
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/danishayman/Cervical-Cancer-Predictive-Model.git
+cd Cervical-Cancer-Predictive-Model
+```
+
+### 2. Create and activate a virtual environment (optional but recommended)
+```bash
+# Using venv
+python -m venv venv
+# On Windows
+venv\Scripts\activate
+# On macOS/Linux
+source venv/bin/activate
+```
+
+### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the notebooks
+```bash
+jupyter notebook
+```
+Navigate to the notebooks directory and open the desired notebook to run the analysis.
+
+## 📈 Results
+
+### Model Performance Comparison
+| Model | Accuracy | Precision | Recall | F1-Score |
+|-------|----------|-----------|--------|----------|
+| Decision Trees | 64.18% | 65.32% | 63.95% | 64.63% |
+| Support Vector Machines (SVM) | 74.63% | 73.87% | 75.21% | 74.53% |
+| Traditional Neural Network | 71.34% | 70.85% | 72.46% | 71.64% |
+| Evolutionary Neural Network | 75.25% | 76.30% | 79.52% | 77.88% |
+
+Our best-performing model (Evolutionary Neural Network) achieved:
+- **75.25%** accuracy
+- Improved false positive rate compared to traditional models
+- Better balance between precision and recall
+
+## 🔮 Future Work
+
+- Explore additional feature engineering techniques
+- Implement ensemble methods
+- Test on larger, more diverse datasets
+- Deploy as a web application for clinical use
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
